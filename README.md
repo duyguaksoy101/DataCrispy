@@ -1,0 +1,2 @@
+# DataSpeak
+Marketing AI Analyst
