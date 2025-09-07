@@ -45,50 +45,6 @@
             background: var(--gray-50);
         }
         
-        /* NEW HEADER STYLES */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 16px 24px;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        
-        .header.scrolled {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--gray-900);
-            text-decoration: none;
-        }
-        
-        .logo-icon {
-            display: inline-block;
-            width: 36px;
-            height: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            font-size: 1.2rem;
-        }
-        
         .hero-section {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             position: relative;
@@ -196,28 +152,6 @@
         .btn-primary:hover {
             transform: translateY(-3px);
             box-shadow: 0 20px 40px rgba(245, 158, 11, 0.4);
-        }
-        
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.15);
-            color: white;
-            padding: 18px 32px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 12px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            backdrop-filter: blur(10px);
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: translateY(-3px);
         }
         
         .social-proof {
@@ -756,12 +690,6 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 40px;
             }
-            
-            /* NEW FOOTER MOBILE STYLES */
-            .footer-content {
-                flex-direction: column;
-                gap: 16px;
-            }
         }
         
         .success-state {
@@ -787,44 +715,9 @@
             font-size: 1.1rem;
             color: var(--gray-600);
         }
-        
-        /* NEW FOOTER STYLES */
-        .footer {
-            background: var(--dark);
-            color: white;
-            padding: 60px 24px;
-            text-align: center;
-        }
-        
-        .footer-content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 24px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .footer-link {
-            color: var(--gray-300);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-        
-        .footer-link:hover {
-            color: white;
-        }
     </style>
 </head>
 <body>
-    <header class="header" id="header">
-        <a href="#" class="logo">
-            <span class="logo-icon">🧠</span>
-            <span>DataSpeak AI</span>
-        </a>
-    </header>
-
     <section class="hero-section">
         <div class="container">
             <div class="hero-content">
@@ -842,7 +735,7 @@
                     
                     <div class="cta-container">
                         <a href="#waitlist" class="btn-primary">
-                            🚀 Join the Waitlist for Early Access
+                           🚀 Join the Waitlist for Early Access
                         </a>
                     </div>
                     
@@ -897,38 +790,36 @@
                 <h2 class="section-title">Get Access Before Your Competitors Do</h2>
                 <p class="section-subtitle">
                     Join 1,200+ marketing professionals who are done with manual reporting hell. 
-                    Early access launching January 2025.
+                    Early access launching soon.
                 </p>
             </div>
             
-            <form action="https://formspree.io/f/YOUR_UNIQUE_FORM_ID" method="POST" class="waitlist-form">
-                <input type="hidden" name="_next" value="https://YOUR_DOMAIN.com/#waitlist-success" />
-                <input type="hidden" name="_subject" value="New DataSpeak AI Waitlist Signup!" />
-                
+            <form class="waitlist-form" id="waitlistForm" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="7608960c-4cc5-4e4a-8b88-fe36f84b6e4e">
                 <div class="form-grid">
                     <div class="form-group">
                         <label class="form-label">First Name</label>
-                        <input type="text" class="form-input" id="firstName" name="firstName" required>
+                        <input type="text" name="firstName" class="form-input" id="firstName" required>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Last Name</label>
-                        <input type="text" class="form-input" id="lastName" name="lastName" required>
+                        <input type="text" name="lastName" class="form-input" id="lastName" required>
                     </div>
                 </div>
                 
                 <div class="form-group">
                     <label class="form-label">Work Email</label>
-                    <input type="email" class="form-input" id="email" name="email" required>
+                    <input type="email" name="email" class="form-input" id="email" required>
                 </div>
                 
                 <div class="form-grid">
                     <div class="form-group">
                         <label class="form-label">Company</label>
-                        <input type="text" class="form-input" id="company" name="company" required>
+                        <input type="text" name="company" class="form-input" id="company" required>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Role</label>
-                        <input type="text" class="form-input" id="role" placeholder="e.g. Marketing Manager" name="role" required>
+                        <input type="text" name="role" class="form-input" id="role" placeholder="e.g. Marketing Manager" required>
                     </div>
                 </div>
                 
@@ -937,7 +828,7 @@
                 </button>
             </form>
             
-            <div class="success-state" id="waitlist-success">
+            <div class="success-state" id="successState">
                 <div class="success-icon">🎉</div>
                 <h3 class="success-title">You're In!</h3>
                 <p class="success-message">
@@ -1053,30 +944,9 @@
                     <div class="stat-label">Average Budget Saved</div>
                     <div class="stat-description">Through optimized allocation</div>
                 </div>
-                
-                <div class="stat-card">
-                    <span class="stat-number">1,200+</span>
-                    <div class="stat-label">Beta Users</div>
-                    <div class="stat-description">Marketing professionals testing</div>
-                </div>
             </div>
         </div>
     </section>
-
-    <footer class="footer">
-        <div class="footer-content">
-            <a href="#" class="logo">
-                <span class="logo-icon">🧠</span>
-                <span>DataSpeak AI</span>
-            </a>
-            <a href="mailto:contact@dataspeak.ai" class="footer-link">
-                Contact Us
-            </a>
-            <span class="footer-link">
-                &copy; 2024 DataSpeak AI
-            </span>
-        </div>
-    </footer>
 
     <script>
         // Header scroll effect
@@ -1268,12 +1138,8 @@
         });
         
         // Enhanced form handling
-        // Since we are using Formspree, this JS is no longer needed to prevent the form submission
-        // But we will keep it for the demo.
         document.getElementById('waitlistForm').addEventListener('submit', function(e) {
-            
-            // Only prevent the default action if you are not using a form backend service
-            // For now, Formspree handles this.
+            e.preventDefault();
             
             const formData = {
                 firstName: document.getElementById('firstName').value,
@@ -1297,7 +1163,7 @@
                 
                 // Show success state
                 document.getElementById('waitlistForm').style.display = 'none';
-                document.getElementById('waitlist-success').style.display = 'block';
+                document.getElementById('successState').style.display = 'block';
                 
                 // Track conversion
                 if (typeof gtag !== 'undefined') {
