@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Focus - DataSpeak AI</title>
+    <meta name="description" content="Why we're building DataSpeak AI and our commitment to transforming how marketing professionals work with their data.">
+    
+    <style>
+        :root {
+            --primary: #4338ca;
+            --primary-dark: #3730a3;
+            --secondary: #06b6d4;
+            --accent: #f59e0b;
+            --dark: #0f172a;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--gray-800);
+            background: var(--gray-50);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* Header */
+        header {
+            background: white;
+            border-bottom: 1px solid var(--gray-200);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(20px);
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--gray-900);
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+        
+        .nav-link {
+            color: var(--gray-600);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary);
+        }
+        
+        /* Main Content */
+        main {
+            padding: 80px 0 120px;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .page-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .page-subtitle {
+            font-size: 1.3rem;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .content-section {
+            margin-bottom: 60px;
+            background: white;
+            padding: 48px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--gray-200);
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 24px;
+            position: relative;
+            padding-left: 24px;
+        }
+        
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        .section-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--gray-700);
+        }
+        
+        .section-content p {
+            margin-bottom: 20px;
+        }
+        
+        .section-content p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, var(--gray-50) 0%, #f0f9ff 100%);
+            border: 1px solid #e0f2fe;
+            border-radius: 16px;
+            padding: 32px;
+            margin: 40px 0;
+            position: relative;
+        }
+        
+        .highlight-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            border-radius: 16px 16px 0 0;
+        }
+        
+        .quote {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--primary);
+            font-weight: 600;
+            text-align: center;
+            line-height: 1.6;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+            margin: 40px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 24px;
+            background: var(--gray-50);
+            border-radius: 12px;
+            border: 1px solid var(--gray-200);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            font-weight: 600;
+        }
+        
+        .commitment-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .commitment-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding: 20px;
+            background: var(--gray-50);
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .commitment-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-800) 100%);
+            color: white;
+            padding: 60px 48px;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        .cta-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        
+        .cta-text {
+            font-size: 1.1rem;
+            color: var(--gray-300);
+            margin-bottom: 32px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--accent) 0%, #d97706 100%);
+            color: white;
+            padding: 18px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(245, 158, 11, 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--gray-900);
+            color: white;
+            padding: 60px 0 40px;
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        
+        .footer-logo-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.4rem;
+        }
+        
+        .footer-logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+        
+        .footer-tagline {
+            color: var(--gray-400);
+            margin-bottom: 32px;
+            font-size: 1.1rem;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid var(--gray-700);
+            padding-top: 32px;
+            color: var(--gray-500);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2.5rem;
+            }
+            
+            .content-section {
+                padding: 32px 24px;
+            }
+            
+            .cta-section {
+                padding: 40px 24px;
+            }
+            
+            .cta-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo">
+                <div class="logo-icon">DA</div>
+                <span class="logo-text">DataSpeak AI</span>
+            </a>
+            <nav style="display: flex; align-items: center; gap: 32px;">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/mission" class="nav-link" style="color: var(--primary); font-weight: 600;">Our Mission</a>
+                <a href="/#waitlist" class="nav-link" style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 10px 20px; border-radius: 8px; font-weight: 600;">Early Access</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">Our Focus</h1>
+                <p class="page-subtitle">
+                    Why we're building DataSpeak AI and our commitment to transforming how marketing professionals work with their data
+                </p>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">The Problem We Can't Ignore</h2>
+                <div class="section-content">
+                    <p>Every day, thousands of marketing professionals sit in meetings, staring at spreadsheets, frantically trying to make sense of data scattered across dozens of platforms. They're brilliant strategists reduced to data janitors, spending 60% of their time on manual reporting instead of driving growth.</p>
+                    
+                    <p>We've watched talented marketers burn out, not from the creative challenges they love, but from the endless cycle of export-clean-format-present-repeat. We've seen million-dollar decisions delayed because someone couldn't quickly answer "Which campaigns are actually working?"</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">73%</span>
+                            <div class="stat-label">of marketers' time on manual tasks</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">6.5hrs</span>
+                            <div class="stat-label">weekly on report creation</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">15+</span>
+                            <div class="stat-label">tools in average marketing stack</div>
+                        </div>
+                    </div>
+                    
+                    <p>This isn't just inefficiency. It's human potential being wasted on work that technology should handle.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Our Vision</h2>
+                <div class="section-content">
+                    <p>We believe marketing professionals should spend their time on strategy, creativity, and growth—not wrestling with data exports and pivot tables.</p>
+                    
+                    <div class="highlight-box">
+                        <div class="quote">
+                            "What if you could just ask your data a question, like you would ask a colleague, and get an intelligent, actionable answer in seconds?"
+                        </div>
+                    </div>
+                    
+                    <p>DataSpeak AI isn't just another analytics dashboard. It's a fundamental shift in how humans interact with marketing data. We're building the world's first conversational marketing intelligence platform that understands context, speaks your language, and thinks like a senior marketing analyst.</p>
+                    
+                    <p>Imagine asking "Which of our Q3 campaigns had the worst cost per acquisition and why?" and getting not just numbers, but insights, correlations, and recommendations. Imagine generating executive-ready reports by simply describing what you need. Imagine never again saying "I'll have to get back to you on that data."</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Our Commitments</h2>
+                <div class="section-content">
+                    <ul class="commitment-list">
+                        <li>
+                            <div class="commitment-icon">1</div>
+                            <div>
+                                <strong>Human-First Design:</strong> Every feature we build will prioritize how humans actually think and work, not how databases and APIs are structured.
+                            </div>
+                        </li>
+                        <li>
+                            <div class="commitment-icon">2</div>
+                            <div>
+                                <strong>Radical Transparency:</strong> You'll always know how our AI reached its conclusions. No black boxes, no "trust us" recommendations.
+                            </div>
+                        </li>
+                        <li>
+                            <div class="commitment-icon">3</div>
+                            <div>
+                                <strong>Privacy by Design:</strong> Your data stays yours. We're building infrastructure that keeps your competitive insights secure and private.
+                            </div>
+                        </li>
+                        <li>
+                            <div class="commitment-icon">4</div>
+                            <div>
+                                <strong>Accessible Intelligence:</strong> Advanced analytics shouldn't require a PhD in data science. We're making sophisticated insights available to every marketing professional.
+                            </div>
+                        </li>
+                        <li>
+                            <div class="commitment-icon">5</div>
+                            <div>
+                                <strong>Continuous Learning:</strong> We'll keep learning from how you work, constantly improving our understanding of marketing challenges and solutions.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Why Now</h2>
+                <div class="section-content">
+                    <p>The marketing technology landscape has exploded. The average marketing team now uses 15+ different tools, each with its own dashboard, metrics, and way of organizing data. This complexity has created a new kind of problem: data abundance without insight clarity.</p>
+                    
+                    <p>At the same time, AI has reached a point where it can truly understand natural language and context in ways that weren't possible just two years ago. We can finally build the intelligent layer that sits between humans and their data—translating questions into insights, patterns into strategies.</p>
+                    
+                    <p>The marketing professionals who get early access to this technology will have an unprecedented competitive advantage. They'll make faster decisions, spot opportunities earlier, and spend their valuable time on what drives growth rather than what generates reports.</p>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h2 class="cta-title">Join Us in Building the Future</h2>
+                <p class="cta-text">
+                    We're looking for forward-thinking marketing professionals to help shape DataSpeak AI. Your insights and feedback will directly influence how we build this platform.
+                </p>
+                <a href="/#waitlist" class="cta-button">
+                    Get Early Access
+                    <span>→</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="footer-logo-icon">DS</div>
+                <span class="footer-logo-text">DataSpeak AI</span>
+            </div>
+            <p class="footer-tagline">
+                The marketing intelligence platform that actually understands you
+            </p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DataSpeak AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
