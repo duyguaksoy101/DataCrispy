@@ -76,11 +76,31 @@
             align-items: center;
         }
 
-        .logo {
+      .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--gray-900);
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        .logo-text {
             font-size: 1.5rem;
             font-weight: 800;
             color: white;
-            text-decoration: none;
         }
 
         .navigation {
@@ -828,12 +848,9 @@
 <body>
     <header class="header-section" id="header">
         <div class="container">
-            <a href="#" class="logo" style="display: flex; align-items: center; gap: 8px;">
-                <svg width="32" height="32" viewBox="0 0 45 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22.5 0L0 12.3333V44L22.5 31.6667V0Z" fill="white"/>
-                    <path d="M22.5 31.6667L45 44V12.3333L22.5 0V31.6667Z" fill="white"/>
-                </svg>
-                DataSpeak AI
+             <a href="/" class="logo">
+                <div class="logo-icon">DA</div>
+                <span class="logo-text">DataSpeak AI</span>
             </a>
             <nav class="navigation">
                 <a href="ourintention.html" class="nav-link">Our Intention</a>
