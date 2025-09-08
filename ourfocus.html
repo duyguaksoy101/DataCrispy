@@ -42,26 +42,25 @@
             padding: 0 24px;
         }
         
-        /* Header */
-        header {
+        /* Header Styles */
+        .header-section {
             background: white;
             border-bottom: 1px solid var(--gray-200);
-            padding: 20px 0;
+            padding: 1.5rem 0;
             position: sticky;
             top: 0;
-            z-index: 100;
+            width: 100%;
+            z-index: 1000;
             backdrop-filter: blur(20px);
         }
-        
-        .header-content {
+
+        .header-section .container {
+            max-width: 1280px;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
+            align-items: center;
         }
-        
+
         .logo {
             display: flex;
             align-items: center;
@@ -69,7 +68,7 @@
             text-decoration: none;
             color: var(--gray-900);
         }
-        
+
         .logo-icon {
             width: 40px;
             height: 40px;
@@ -82,21 +81,49 @@
             font-weight: 700;
             font-size: 1.2rem;
         }
-        
+
         .logo-text {
             font-size: 1.5rem;
             font-weight: 800;
+            color: var(--dark);
         }
-        
+
+        .navigation {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
         .nav-link {
-            color: var(--gray-600);
+            color: var(--gray-700);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
         }
-        
+
         .nav-link:hover {
             color: var(--primary);
+        }
+        
+        .nav-link.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
         }
         
         /* Main Content */
@@ -356,6 +383,9 @@
         }
         
         @media (max-width: 768px) {
+             .navigation {
+                display: none;
+            }
             .page-title {
                 font-size: 2.5rem;
             }
@@ -375,16 +405,16 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="header-content">
+    <header class="header-section" id="header">
+        <div class="container">
             <a href="/" class="logo">
                 <div class="logo-icon">DA</div>
                 <span class="logo-text">DataSpeak AI</span>
             </a>
-            <nav style="display: flex; align-items: center; gap: 32px;">
-                <a href="/" class="nav-link">Home</a>
-                <a href="/mission" class="nav-link" style="color: var(--primary); font-weight: 600;">Our Mission</a>
-                <a href="/#waitlist" class="nav-link" style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 10px 20px; border-radius: 8px; font-weight: 600;">Early Access</a>
+            <nav class="navigation">
+                <a href="#" class="nav-link">Our Intention</a>
+                <a href="ourintention.html" class="nav-link active">Our Focus</a>
+                <a href="/#waitlist" class="btn-secondary">Get Early Access</a>
             </nav>
         </div>
     </header>
@@ -484,7 +514,7 @@
                 <div class="section-content">
                     <p>The marketing technology landscape has exploded. The average marketing team now uses 15+ different tools, each with its own dashboard, metrics, and way of organizing data. This complexity has created a new kind of problem: data abundance without insight clarity.</p>
                     
-                    <p>At the same time, AI has reached a point where it can truly understand natural language and context in ways that weren't possible just two years ago. We can finally build the intelligent layer that sits between humans and their data—translating questions into insights, patterns into strategies.</p>
+                    <p>At the same time, AI has reached a point where it can truly understand natural language and context in ways that were not possible just two years ago. We can finally build the intelligent layer that sits between humans and their data—translating questions into insights, patterns into strategies.</p>
                     
                     <p>The marketing professionals who get early access to this technology will have an unprecedented competitive advantage. They'll make faster decisions, spot opportunities earlier, and spend their valuable time on what drives growth rather than what generates reports.</p>
                 </div>
