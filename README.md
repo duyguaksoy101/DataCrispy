@@ -1,2 +1,2 @@
-# DataSpeak
+# DataCrispy
 Marketing AI Analyst
